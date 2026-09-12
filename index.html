@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Steph Turns 30</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600&family=Caveat:wght@600;700&family=Fredoka:wght@700&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
   --paper: #efe8db;
@@ -43,23 +43,27 @@ body {
 
 .hero {
   position: relative;
-  height: 590px;
+  height: 700px;
   overflow: hidden;
 }
 
 .disco {
   position: absolute;
   border-radius: 50%;
-  background-color: #d9dce0;
+  background-color: #b6bac1;
   background-image:
-    radial-gradient(circle at 34% 28%, rgba(255,255,255,0.95), rgba(255,255,255,0) 44%),
-    repeating-linear-gradient(0deg, rgba(20,20,30,0.28) 0 1.5px, transparent 1.5px 9px),
-    repeating-linear-gradient(90deg, rgba(20,20,30,0.28) 0 1.5px, transparent 1.5px 9px),
-    conic-gradient(from 20deg, #c9cdd3, #f2f3f5, #aeb3ba, #f6f7f8, #bfc4ca, #e6e8eb, #a7acb3, #eef0f2, #c9cdd3);
+    radial-gradient(circle at 26% 22%, rgba(255,255,255,0.95), rgba(255,255,255,0) 30%),
+    radial-gradient(circle at 74% 26%, rgba(255,165,225,0.5), rgba(255,165,225,0) 42%),
+    radial-gradient(circle at 64% 80%, rgba(255,200,110,0.42), rgba(255,200,110,0) 46%),
+    radial-gradient(circle at 16% 78%, rgba(140,190,255,0.4), rgba(140,190,255,0) 46%),
+    repeating-linear-gradient(52deg, rgba(12,12,20,0.34) 0 3px, transparent 3px 8px),
+    repeating-linear-gradient(-38deg, rgba(12,12,20,0.30) 0 3px, transparent 3px 8px),
+    linear-gradient(155deg, #f2f3f5 0%, #aeb2b9 50%, #82868e 100%);
+  background-blend-mode: screen, screen, screen, screen, multiply, multiply, normal;
   box-shadow:
-    inset -14px -16px 34px rgba(0,0,0,0.38),
-    inset 10px 10px 22px rgba(255,255,255,0.6),
-    0 18px 30px rgba(40,30,20,0.18);
+    inset -12px -15px 28px rgba(0,0,0,0.42),
+    inset 9px 9px 18px rgba(255,255,255,0.6),
+    0 16px 26px rgba(40,30,20,0.22);
 }
 
 .chain {
@@ -84,176 +88,87 @@ body {
   opacity: 0.92;
 }
 
-.photo {
+.cutout {
   position: absolute;
-  top: 128px;
+  top: 178px;
   left: 50%;
   width: 320px;
-  height: 400px;
+  height: 420px;
   margin-left: -160px;
-  padding: 10px;
-  background: var(--paper-light);
-  border-radius: 160px 160px 26px 26px;
-  box-shadow: 0 22px 36px rgba(40,30,20,0.28);
-  transform: rotate(1.5deg);
+  clip-path: url(#portraitBlob);
+  filter: drop-shadow(0 18px 20px rgba(40,30,20,0.38));
 }
 
-.photo-window {
-  width: 100%;
-  height: 100%;
-  border-radius: 150px 150px 18px 18px;
-  overflow: hidden;
-  position: relative;
-  background: #222;
-}
-
-.photo-window img {
+.cutout img {
   position: absolute;
-  width: 824px;
-  height: 1099px;
-  left: -313px;
-  top: -272px;
-  filter: grayscale(1) contrast(1.08) brightness(1.02);
+  width: 948px;
+  height: 1264px;
+  left: -382px;
+  top: -278px;
 }
 
 .hat {
   position: absolute;
-  top: 34px;
+  top: 66px;
   left: 50%;
-  width: 124px;
-  height: 160px;
-  margin-left: -86px;
+  width: 132px;
+  height: 168px;
+  margin-left: -94px;
   transform: rotate(-16deg);
   clip-path: polygon(50% 0%, 10% 100%, 90% 100%);
   background:
-    radial-gradient(circle, rgba(255,255,255,0.85) 1.3px, transparent 1.9px) 0 0/10px 10px,
-    linear-gradient(160deg, #f5b3c9 0%, var(--pink) 45%, var(--pink-deep) 100%);
-  filter: drop-shadow(0 10px 12px rgba(120,50,80,0.3));
+    radial-gradient(circle, rgba(255,255,255,0.9) 1.4px, transparent 2px) 0 0/9px 9px,
+    linear-gradient(160deg, #f7bdd3 0%, var(--pink) 42%, var(--pink-deep) 78%, #c14a78 100%);
+  filter: drop-shadow(0 10px 12px rgba(120,50,80,0.32));
 }
 
 .pom {
   position: absolute;
-  top: 18px;
+  top: 50px;
   left: 50%;
   width: 34px;
   height: 34px;
-  margin-left: -58px;
+  margin-left: -66px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #fff1b8, #e7b23e 55%, #b98a1c);
   box-shadow: 0 4px 8px rgba(120,80,0,0.3);
 }
 
-.thirty {
+.ribbon-shadow {
   position: absolute;
-  top: 392px;
-  left: 222px;
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-size: 140px;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  transform: rotate(-7deg);
-  background: linear-gradient(165deg, #ffffff 0%, #b9bdc3 28%, #f4f5f7 46%, #7a7f87 66%, #e2e4e7 84%, #9da2a9 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 10px 14px rgba(40,30,20,0.35));
+  top: 573px;
+  left: 50%;
+  width: 300px;
+  height: 84px;
+  margin-left: -160px;
+  transform: rotate(-5deg);
+  clip-path: polygon(0% 0%, 82% 0%, 100% 50%, 82% 100%, 0% 100%);
+  background: #7d818a;
 }
 
-.martini {
+.ribbon {
   position: absolute;
-  top: 405px;
-  left: 34px;
-  width: 92px;
-  height: 130px;
-  transform: rotate(-9deg);
-  filter: drop-shadow(0 8px 10px rgba(40,30,20,0.22));
-}
-
-.martini .cup {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 92px;
-  height: 58px;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(220,228,235,0.9));
-  border-top: 3px solid #7a7f87;
-}
-
-.martini .drink {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 68px;
-  height: 40px;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  background: linear-gradient(180deg, #f6a7c2, #e9789f);
-}
-
-.martini .olive {
-  position: absolute;
-  top: 8px;
-  left: 30px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 40% 40%, #a9c76a, #5f7a2e);
-  border: 2px solid #f7f2e8;
-}
-
-.martini .stem {
-  position: absolute;
-  top: 56px;
-  left: 43px;
-  width: 6px;
-  height: 52px;
-  background: linear-gradient(90deg, #a8adb4, #eef0f2, #8b9098);
-}
-
-.martini .base {
-  position: absolute;
-  top: 104px;
-  left: 16px;
-  width: 60px;
-  height: 14px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, #d9dce0, #8b9098);
-}
-
-.headline {
+  top: 563px;
+  left: 50%;
+  width: 300px;
+  height: 84px;
+  margin-left: -160px;
+  transform: rotate(-5deg);
+  clip-path: polygon(0% 0%, 82% 0%, 100% 50%, 82% 100%, 0% 100%);
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1.4px) 0 0/9px 9px,
+    linear-gradient(155deg, #f4f5f6 0%, #c7cbd0 32%, #eef0f2 52%, #9297a0 78%, #d3d6da 100%);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: -6px;
+  justify-content: center;
 }
 
-.sticker-text {
-  display: inline-block;
-  background: var(--sticker);
-  padding: 14px 26px 18px;
-  border-radius: 18px;
-  transform: rotate(-2deg);
-  text-align: center;
-  box-shadow: 0 12px 22px rgba(40,30,20,0.16);
-}
-
-.sticker-text .its {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 1;
-  color: var(--ink);
-}
-
-.sticker-text .bday {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 58px;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
-  color: var(--ink);
+.ribbon span {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  letter-spacing: 0.02em;
+  color: #201f26;
   text-transform: uppercase;
 }
 
@@ -503,49 +418,44 @@ footer .love { color: var(--red); font-size: 28px; font-weight: 700; display: bl
 [hidden] { display: none !important; }
 
 @media (max-width: 380px) {
-  .hero { height: 560px; }
-  .photo { width: 290px; height: 370px; margin-left: -145px; }
-  .thirty { left: 200px; font-size: 126px; }
-  .sticker-text .bday { font-size: 50px; }
+  .hero { height: 660px; }
+  .cutout { width: 290px; height: 390px; margin-left: -145px; }
+  .ribbon, .ribbon-shadow { width: 270px; margin-left: -145px; }
+  .ribbon span { font-size: 30px; }
 }
 </style>
 </head>
 <body>
   <div class="page">
+    <svg width="0" height="0" style="position:absolute">
+      <clipPath id="portraitBlob" clipPathUnits="objectBoundingBox">
+        <path d="M0.44,0.03 C0.33,0.03 0.24,0.09 0.20,0.19 C0.14,0.27 0.09,0.32 0.08,0.44 C0.07,0.58 0.10,0.65 0.17,0.71 C0.14,0.82 0.16,0.92 0.24,0.98 L0.76,0.98 C0.84,0.92 0.86,0.82 0.83,0.71 C0.90,0.65 0.93,0.58 0.92,0.44 C0.91,0.32 0.86,0.27 0.80,0.19 C0.76,0.09 0.67,0.03 0.56,0.03 C0.52,0.01 0.48,0.01 0.44,0.03 Z"/>
+      </clipPath>
+    </svg>
+
     <div class="hero">
-      <div class="disco" style="width:280px;height:280px;top:-110px;left:-90px;"></div>
-      <div class="chain" style="left:344px;height:92px;"></div>
-      <div class="disco" style="width:118px;height:118px;top:78px;left:285px;"></div>
+      <div class="disco" style="width:250px;height:250px;top:-95px;left:-70px;"></div>
+      <div class="disco" style="width:190px;height:190px;top:-40px;left:105px;"></div>
+      <div class="disco" style="width:220px;height:220px;top:-110px;left:250px;"></div>
+      <div class="disco" style="width:160px;height:160px;top:-20px;left:400px;"></div>
+      <div class="disco" style="width:130px;height:130px;top:70px;left:330px;"></div>
+      <div class="disco" style="width:140px;height:140px;top:85px;left:5px;"></div>
 
-      <div class="star chrome" style="width:70px;height:70px;top:214px;left:318px;transform:rotate(14deg);"></div>
-      <div class="star chrome" style="width:48px;height:48px;top:292px;left:290px;transform:rotate(-10deg);"></div>
-      <div class="star chrome" style="width:58px;height:58px;top:470px;left:18px;transform:rotate(22deg);"></div>
-      <div class="star red" style="width:30px;height:30px;top:96px;left:236px;transform:rotate(12deg);"></div>
-      <div class="star red" style="width:22px;height:22px;top:38px;left:260px;transform:rotate(-18deg);"></div>
-      <div class="star red" style="width:30px;height:30px;top:520px;left:340px;transform:rotate(8deg);"></div>
+      <div class="star chrome" style="width:34px;height:34px;top:26px;left:255px;transform:rotate(-12deg);"></div>
+      <div class="star red" style="width:26px;height:26px;top:6px;left:90px;transform:rotate(12deg);"></div>
+      <div class="star red" style="width:22px;height:22px;top:150px;left:350px;transform:rotate(-18deg);"></div>
+      <div class="star chrome" style="width:46px;height:46px;top:230px;left:20px;transform:rotate(20deg);"></div>
+      <div class="star red" style="width:28px;height:28px;top:585px;left:360px;transform:rotate(10deg);"></div>
 
-      <div class="photo">
-        <div class="photo-window"><img src="photo-v2.jpg" alt="" width="824" height="1099"></div>
-      </div>
       <div class="hat"></div>
       <div class="pom"></div>
 
-      <div class="thirty">30</div>
-
-      <div class="martini">
-        <div class="cup"></div>
-        <div class="drink"></div>
-        <div class="olive"></div>
-        <div class="stem"></div>
-        <div class="base"></div>
+      <div class="cutout">
+        <img src="photo-v2.jpg" alt="" width="824" height="1099">
       </div>
-    </div>
 
-    <div class="headline">
-      <div class="sticker-text">
-        <div class="its">It's my</div>
-        <div class="bday">Birthday</div>
-      </div>
+      <div class="ribbon-shadow"></div>
+      <div class="ribbon"><span>Birthday Girl</span></div>
     </div>
 
     <div class="details">
