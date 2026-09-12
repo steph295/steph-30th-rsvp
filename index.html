@@ -563,8 +563,8 @@ footer .love { color: var(--red); font-size: 28px; font-weight: 700; display: bl
 
       <form id="rsvpForm">
         <label class="field">
-          Your name
-          <input type="text" id="nameInput" name="name" autocomplete="name" required maxlength="60">
+          Full name (first &amp; last)
+          <input type="text" id="nameInput" name="name" autocomplete="name" placeholder="e.g. Jane Smith" required maxlength="60">
         </label>
 
         <div class="attend-row" role="group" aria-label="Are you coming">
@@ -656,8 +656,19 @@ footer .love { color: var(--red); font-size: 28px; font-weight: 700; display: bl
   var attending = null;
   var plusOnes = 0;
 
+  function hasFullName() {
+    return nameInput.value.trim().split(/\s+/).filter(Boolean).length >= 2;
+  }
+
   function updateSubmitState() {
-    submitBtn.disabled = !(nameInput.value.trim() && attending !== null);
+    var name = nameInput.value.trim();
+    submitBtn.disabled = !(name && attending !== null && hasFullName());
+    if (name && !hasFullName()) {
+      formHint.dataset.state = "";
+      formHint.textContent = "Please enter your first and last name.";
+    } else {
+      formHint.textContent = "";
+    }
   }
 
   Array.prototype.forEach.call(document.querySelectorAll(".choice-btn"), function (btn) {
@@ -690,8 +701,8 @@ footer .love { color: var(--red); font-size: 28px; font-weight: 700; display: bl
     if (rec.attending) {
       cardTitle.textContent = "You're in, " + rec.name + "!";
       body.textContent = rec.plusOnes > 0
-        ? "See you 6pm on Druid St — you plus " + rec.plusOnes + "."
-        : "See you 6pm on Druid St.";
+        ? "Can't wait to see you there — you plus " + rec.plusOnes + "."
+        : "Can't wait to see you there.";
     } else {
       cardTitle.textContent = "Noted, " + rec.name;
       body.textContent = "Gutted you can't make it — you'll be missed.";
