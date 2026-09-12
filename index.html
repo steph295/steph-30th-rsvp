@@ -608,13 +608,15 @@ footer .love { color: var(--red); font-size: 28px; font-weight: 700; display: bl
   // Fill these in once the Google Form is created (see setup notes),
   // then commit + push. Until FORM_ACTION is set, submissions are only
   // saved on the guest's own device (still shows the confirmation).
-  var FORM_ACTION = ""; // e.g. "https://docs.google.com/forms/d/e/XXXXXXX/formResponse"
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLScAlJgEMwmJnB_H5za8fFtUYMkSn2fai7sL7c7ggynWb56cdw/formResponse";
   var ENTRY = {
-    name: "",       // e.g. "entry.123456789"
-    attending: "",  // e.g. "entry.234567890"
-    plusOnes: "",   // e.g. "entry.345678901"
-    note: ""        // e.g. "entry.456789012"
+    name: "entry.389822981",
+    attending: "entry.2143385546",
+    plusOnes: "entry.1092522390",
+    note: "entry.1495900919"
   };
+  var ATTEND_YES = "Yes, absolutely!";
+  var ATTEND_NO = "Unfortunately, I cannot make it.";
   // ---------------------------------------------------------------------
 
   var LS_KEY = "stephBday30Rsvp";
@@ -633,7 +635,7 @@ footer .love { color: var(--red); font-size: 28px; font-weight: 700; display: bl
     if (!FORM_ACTION || !ENTRY.name) return Promise.resolve(false);
     var body = new URLSearchParams();
     body.append(ENTRY.name, record.name);
-    body.append(ENTRY.attending, record.attending ? "Yes" : "No");
+    body.append(ENTRY.attending, record.attending ? ATTEND_YES : ATTEND_NO);
     body.append(ENTRY.plusOnes, String(record.plusOnes || 0));
     body.append(ENTRY.note, record.note || "");
     return fetch(FORM_ACTION, { method: "POST", mode: "no-cors", body: body })
